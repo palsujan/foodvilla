@@ -4,13 +4,7 @@ import { useState } from "react";
 
 const filterData = (searchInput, restaurants) =>{
     return restaurants.filter((restaurant) =>
-        {
-        // restaurant.data.data.name.includes(searchInput)
-        // console.log(restaurant.data.data.name);
-        // console.log(searchInput);
-        console.log(restaurant.data.data.name.includes(searchInput));
-        }
-        
+            restaurant.data.data.name.includes(searchInput)
     )
     
 }
@@ -50,11 +44,9 @@ const Body = () =>{
                 >Search</button>
             </div>
             <div className="resturant-list">
-                {
-                    restaurantList.map(restaurant =>{
+                { restaurants.map(restaurant =>{
                         return  <RestaurantCard {...restaurant.data.data} key={restaurant.data.data.id}/>
-                    })
-                }
+                    })}
               
                {/* <ResturentCard {...resturantList[1].data.data}/>  
                <ResturentCard {...resturantList[2].data.data}/>
