@@ -1,11 +1,12 @@
 import {restaurantList} from "../config"
 import RestaurantCard from "./RestaurantCard"
 import { useState, useEffect } from "react";
-import Shimmer from "./Shimmer";
+import {Shimmer} from "./Shimmer";
+import { ShimmerThumbnail } from "react-shimmer-effects";
 
 const filterData = (searchInput, restaurants) =>{
     return restaurants.filter((restaurant) =>
-            restaurant.data.data.name.includes(searchInput)
+            restaurant?.data?.data?.name?.toLowerCase()?.includes(searchInput.toLowerCase())
     )
     
 }
@@ -34,7 +35,10 @@ const Body = () =>{
 
     //Conditional renderning
 
-    return (allRestaurants.length === 0 ) ? (
+    //not render component (Early retrun) =>
+    if(!allRestaurants) return null;
+    if(filteredRestaurants?.length ===  0) return <h1>No Restaurant match your found</h1>
+    return (allRestaurants?.length === 0 ) ? (
     <Shimmer/> 
     ) : (
         <>

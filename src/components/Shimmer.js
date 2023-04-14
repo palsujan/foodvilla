@@ -1,9 +1,13 @@
 import React from 'react'
 
-const Shimmer = () => {
+export const Shimmer = () => {
   return (
     <div>Shimmer UI Loading.........</div>
   )
 }
 
-export default Shimmer
+// class Example extends Component {
+//     render() {
+//       return <ShimmerThumbnail height={250} rounded />;
+//     }
+//   }

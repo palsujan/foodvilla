@@ -1,4 +1,9 @@
-import React from 'react'
+import React from 'react';
+import { useState } from "react";
+const loogedInUser = () => {
+    //API to authenticate
+    return true;
+}
 
 const Title = () =>(
     <a href="/">
@@ -10,6 +15,7 @@ const Title = () =>(
     </a>
 );
 const Header = () =>{
+    const [isLoggedIn, setIsLoggedIn] = useState(true)
     return(
         <div className="header">
             <Title/>
@@ -21,6 +27,14 @@ const Header = () =>{
                     <li>Cart</li>
                 </ul>
             </div>
+            {
+                isLoggedIn ? (
+                <button onClick = { () =>  setIsLoggedIn(false)}>Logout</button>
+                ) :  (
+                    <button onClick = { () =>  setIsLoggedIn(true)}>Login</button>
+                )
+            }
+           
         </div>
     )
 };
