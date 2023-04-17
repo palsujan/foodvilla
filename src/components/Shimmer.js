@@ -2,12 +2,10 @@ import React from 'react'
 
 export const Shimmer = () => {
   return (
-    <div>Shimmer UI Loading.........</div>
+    <div className='restaurant-list'>
+      {Array(10).fill("").map((e, index)=>(
+        <div key={index} className="shimmer-card"></div>
+      ) )}
+    </div>
   )
 }
-
-// class Example extends Component {
-//     render() {
-//       return <ShimmerThumbnail height={250} rounded />;
-//     }
-//   }
