@@ -45,3 +45,16 @@
     padding: 10px;
     margin: 10px;
 }
+.footerText{
+    background-color: blueviolet;
+    color: #fff;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+.footerText> p{
+    text-align: center;
+}
+.footerText> p> a{
+    color: #fff;
+    font-weight: 600;
+}
