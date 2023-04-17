@@ -3,13 +3,13 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 
 const Title = () =>(
-    <a href="/">
+    <Link to="/">
         <img 
             className="logo"
             src="https://yt3.googleusercontent.com/ytc/AL5GRJXudT76175T4x4n7eslWM1YkgNLHDSSqfXGoadl=s900-c-k-c0x00ffffff-no-rj"
             alt="Food villa logo"
         />
-    </a>
+    </Link>
 );
 const Header = () =>{
     const [isLoggedIn, setIsLoggedIn] = useState(true)
