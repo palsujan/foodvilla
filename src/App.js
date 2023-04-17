@@ -7,6 +7,8 @@ import Footer from "./components/Footer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./components/About";
 import Error from "./components/Error";
+import Contact from "./components/Contact";
+import Cart from "./components/Cart";
 
 
 
@@ -15,6 +17,8 @@ import Error from "./components/Error";
             <>
             <Header/>
             <Body/>
+            <Contact/>
+            <Cart/>
             <Footer/>
             </>
         );
@@ -29,6 +33,16 @@ import Error from "./components/Error";
         {
             path: "/about",
             element: <About/>,
+            errorElement:<Error/>
+        },
+        {
+            path: "/contact",
+            element: <Contact/>,
+            errorElement:<Error/>
+        },
+        {
+            path: "/cart",
+            element: <Cart/>,
             errorElement:<Error/>
         }
     ])
