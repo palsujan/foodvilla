@@ -29,6 +29,11 @@
     margin: 10px;
     border-radius: 4px;
 }
+.card h2,h3,h4,h5,p{
+    color: #000;
+    font-family: sans-serif;
+    text-decoration: none;
+}
 .card>img{
     width: 100%;
     border-radius: 4px;
@@ -57,4 +62,7 @@
 .footerText> p> a{
     color: #fff;
     font-weight: 600;
+}
+.menu{
+    display: flex;
 }
