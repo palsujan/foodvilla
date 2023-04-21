@@ -1,3 +1,6 @@
+a{
+    text-decoration: none;
+}
 .header{
     display: flex;
     justify-content: space-between;
@@ -23,12 +26,25 @@
     width: 120px;
 }
 .card{
-    max-width: 200px;
+    max-width:290px;
     border: 1px solid gray;
     padding: 10px;
     margin: 10px;
     border-radius: 4px;
 }
+.card h2{
+    font-size: 18px;
+}
+.card p{
+    font-size: 16px;
+    color: #484848;
+}
+.card h4{
+    font-size: 16px;
+    color: #484848;
+}
+
+
 .card h2,h3,h4,h5,p{
     color: #000;
     font-family: sans-serif;
@@ -41,6 +57,8 @@
 .restaurant-list{
     display: flex;
     flex-wrap: wrap;
+    max-width: 1360px;
+    margin: 0 auto;
 }
 .shimmer-card{
     width: 200px;
