@@ -4,6 +4,7 @@ import { IMG_CDN_URL } from '../config';
 import { Shimmer } from './Shimmer';
 
 const RestaurantMenu = () => {
+  //How to read a dynamic URL params
     const {id} = useParams();
 
     const [restaurant, setRestaurant] = useState(null)

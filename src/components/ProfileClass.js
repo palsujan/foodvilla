@@ -26,13 +26,14 @@ class ProfileClass extends React.Component {
     console.log("ComponentDidUpdate")
   }
     render(){
+         const {avatar_url, name, location, bio} = this.state.userInfo;
         return (
             <div>
                 <h1>Profile Class Component</h1>
-                <img src={this.state?.userInfo?.avatar_url} alt="Github_image"/>
-                <h2>Name: {this.state?.userInfo?.name}</h2>
-                <h3>Location: {this.state?.userInfo?.location}</h3>
-                <h3>Bio: {this.state?.userInfo?.bio}</h3>
+                <img src={avatar_url} alt="Github_image"/>
+                <h2>Name: {name}</h2>
+                <h3>Location: {location}</h3>
+                <h3>Bio: {bio}</h3>
             </div>
         )
     }

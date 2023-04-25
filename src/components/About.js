@@ -35,7 +35,7 @@ class About extends Component{
                  </p>
                  {/* <Outlet/> */}
                  <Profile name={"Sujan props assing"}/>
-                 {/* <ProfileClass name={"Sujan Class Props Passing"}/> */}
+                 <ProfileClass name={"Sujan Class Props Passing"}/>
             </>
          )
     }
