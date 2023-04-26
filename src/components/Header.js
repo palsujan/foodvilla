@@ -14,6 +14,7 @@ const Title = () =>(
 );
 const Header = () =>{
     const [isLoggedIn, setIsLoggedIn] = useState(true);
+    // const isLoggedIn = useAuth();
     const isOnline = useOnline();   
     return(
         <div className="header">
@@ -37,6 +38,11 @@ const Header = () =>{
                     <li> 
                         <Link to="/cart">
                             Cart
+                        </Link>
+                    </li>
+                    <li> 
+                        <Link to="/instamart">
+                            Instamart
                         </Link>
                     </li>
                 </ul>

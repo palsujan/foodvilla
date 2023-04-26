@@ -1,5 +1,5 @@
 
-import React, { Children } from "react";
+import React, { Children, Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client ";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -11,8 +11,18 @@ import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
+import { Shimmer } from "./components/Shimmer";
+// import Instamart from "./components/Instamart";
 
+// Chunking
+// Code Splitting
+// Dynamic Bundling
+// Lazy Loading
+// On Demand Loading
+// Dynamic Import
 
+const Instamart = lazy(() => import("./components/Instamart"));
+// Upon On demand loading -> upon render -> suspend loading
 
     const Applayout = () =>{
         return(
@@ -56,6 +66,14 @@ import Profile from "./components/Profile";
                 {
                     path: "/restaurant/:id",
                     element: <RestaurantMenu/>,
+                },
+                {
+                    path: "/instamart",
+                    element: (
+                        <Suspense fallback={<Shimmer></Shimmer>}>
+                            <Instamart/>
+                        </Suspense>
+                    ),
                 }
             ]
         },
