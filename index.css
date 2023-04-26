@@ -60,6 +60,10 @@ a{
     max-width: 1360px;
     margin: 0 auto;
 }
+.container{
+    max-width: 1360px;
+    margin: 0 auto;
+}
 .shimmer-card{
     width: 200px;
     background-color: lightgrey;

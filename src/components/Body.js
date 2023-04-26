@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import {Shimmer} from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 const Body = () =>{
     
@@ -12,29 +13,28 @@ const Body = () =>{
     const [searchInput, setSearchInput] = useState("");
 
      useEffect(() => {
-
         //API call
-
         getRestaurants();
     }, [])
 
-    async function getRestaurants(){
+    async function getRestaurants(){ 
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING")
         const json = await  data.json();
 
         //optional Chaining
         setAllRestaurants(json?.data?.cards)
         setFilteredRestaurants(json?.data?.cards)
-    }
+    } 
     
+    // const isOnline = useOnline();
+    // if(!isOnline){
+    //     return <h1>Please check your internet connection</h1>
+    // }
 
     //Conditional renderning
 
     //not render component (Early retrun) =>
     if(!allRestaurants) return null;
-
-    // if(filteredRestaurants?.length ===  0)
-    //  return <h1>No Restaurant match your found</h1>;
 
     return (allRestaurants?.length === 0 ) ? (
     <Shimmer/> 
