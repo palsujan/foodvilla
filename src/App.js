@@ -1,5 +1,5 @@
 
-import React, { Children, Suspense, lazy } from "react";
+import React, { Children, Suspense, lazy, useState } from "react";
 import ReactDOM from "react-dom/client ";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -12,6 +12,7 @@ import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import { Shimmer } from "./components/Shimmer";
+import RestaurantCard from "./components/RestaurantCard";
 // import Instamart from "./components/Instamart";
 
 // Chunking
@@ -25,6 +26,10 @@ const Instamart = lazy(() => import("./components/Instamart"));
 // Upon On demand loading -> upon render -> suspend loading
 
     const Applayout = () =>{
+        const [user, setUser] = useState({
+            name:"Foodvilla",
+            phone: 7005674037,
+        })
         return(
             <>
             <Header/>
@@ -42,7 +47,12 @@ const Instamart = lazy(() => import("./components/Instamart"));
             children:[
                 {
                     path: "/",
-                    element: <Body/>,
+                    element: <Body user={
+                        {
+                            name:"Foodvilla",
+                            phone: 7005674037,
+                        }
+                    }/>,
                 },
                 {
                     path: "/about",
@@ -85,7 +95,16 @@ const Instamart = lazy(() => import("./components/Instamart"));
 
 
 
+/**
+    Applayout
+    (state=user)
+     - <Body user={user}/>
+        - <RestaurantContainer user =>
+         - RestaurantCard  user ={user}
+          - <h4>{user}</h4>
 
+   Props Drilling       
+ */
 
     // const heading = document.createElement("h1");
     // heading.innerHTML = "Namaste Everyone";

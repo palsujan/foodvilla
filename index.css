@@ -1,9 +1,13 @@
 a{
     text-decoration: none;
 }
+.bg-header{
+    background-color: #fff006;
+}
 .header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .nav-items{
@@ -23,7 +27,14 @@ a{
     color: brown;
 }
 .logo{
-    width: 120px;
+    width: 80px;
+}
+.search-container{
+    max-width: 320px;
+    margin: 20px auto;
+}
+.search-container button{
+    cursor: pointer;
 }
 .card{
     max-width:290px;
@@ -31,6 +42,7 @@ a{
     padding: 10px;
     margin: 10px;
     border-radius: 4px;
+    
 }
 .card h2{
     font-size: 18px;
@@ -59,6 +71,7 @@ a{
     flex-wrap: wrap;
     max-width: 1360px;
     margin: 0 auto;
+    justify-content: space-between;
 }
 .container{
     max-width: 1360px;

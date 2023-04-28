@@ -17,7 +17,9 @@ const Header = () =>{
     // const isLoggedIn = useAuth();
     const isOnline = useOnline();   
     return(
-        <div className="header">
+        <div className='bg-header'>
+            <div className='container'>
+                    <div className="header">
             <Title/>
             <div className="nav-items">
                 <ul>
@@ -56,6 +58,8 @@ const Header = () =>{
                 )
             }
            
+        </div>
+        </div>
         </div>
     )
 };
