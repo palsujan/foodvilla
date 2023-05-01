@@ -1,6 +1,9 @@
 a{
     text-decoration: none;
 }
+button{
+    cursor: pointer;
+}
 .bg-header{
     background-color: #fff006;
 }
