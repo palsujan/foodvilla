@@ -13,6 +13,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import { Shimmer } from "./components/Shimmer";
 import RestaurantCard from "./components/RestaurantCard";
+import { UserContext } from "./utils/UserContext";
 // import Instamart from "./components/Instamart";
 
 // Chunking
@@ -27,15 +28,19 @@ const Instamart = lazy(() => import("./components/Instamart"));
 
     const Applayout = () =>{
         const [user, setUser] = useState({
-            name:"Foodvilla",
+            name:"Sujan Pal",
             phone: 7005674037,
+            email: "sujanpal79@gmail.com"
         })
         return(
-            <>
-            <Header/>
+            <UserContext.Provider value={{
+                user:user,
+                setUser:setUser,
+            }}>
+            <Header/> 
             <Outlet/>
             <Footer/>
-            </>
+            </UserContext.Provider>
         );
     };
 

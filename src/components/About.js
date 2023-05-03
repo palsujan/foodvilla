@@ -3,6 +3,7 @@ import React from "react";
 import Profile from "./Profile";
 import ProfileClass from "./ProfileClass";
 import { Component } from "react";
+import { UserContext } from "../utils/UserContext";
 
 // const About2 = () =>{
 //     return (
@@ -30,6 +31,10 @@ class About extends Component{
         return (
             <>
                  <h1>About Us Page</h1>
+
+                 <UserContext.Consumer>
+                    {({user}) => <h4>{user.name} - {user.email}</h4>}
+                 </UserContext.Consumer>
                  <p>
                      This is the practice react Class session 07
                  </p>

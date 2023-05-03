@@ -1,7 +1,8 @@
 import React from 'react';
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from 'react-router-dom';
 import useOnline from '../utils/useOnline';
+import {UserContext} from "../utils/UserContext"
 
 const Title = () =>(
     <Link to="/">
@@ -15,7 +16,8 @@ const Title = () =>(
 const Header = () =>{
     const [isLoggedIn, setIsLoggedIn] = useState(true);
     // const isLoggedIn = useAuth();
-    const isOnline = useOnline();   
+    const isOnline = useOnline();  
+    const {user} =  useContext(UserContext); 
     return(
         <div className='bg-header'>
             <div className='container'>
@@ -49,7 +51,8 @@ const Header = () =>{
                     </li>
                 </ul>
             </div>
-            <h1>{isOnline ? "✅Online" : " 🔴Offline"}</h1>
+            <h1>{isOnline ? `✅${user.name}` : " 🔴Offline"}</h1>
+            {/* <h2>{user.name}</h2> */}
             {
                 isLoggedIn ? (
                 <button onClick = { () =>  setIsLoggedIn(false)}>Logout</button>
