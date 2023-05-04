@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const useOnline = () => {
  
-    const [useOnline, setIsOnline] = useState(true);
+    const [useOnline, setIsOnline] = useState(true );
     useEffect(() => {
         const handelOnline = () => {
           setIsOnline(true);

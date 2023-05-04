@@ -3,6 +3,8 @@ import { useState, useContext } from "react";
 import { Link } from 'react-router-dom';
 import useOnline from '../utils/useOnline';
 import {UserContext} from "../utils/UserContext"
+import { useSelector } from 'react-redux';
+import store from '../utils/store';
 
 const Title = () =>(
     <Link to="/">
@@ -18,6 +20,8 @@ const Header = () =>{
     // const isLoggedIn = useAuth();
     const isOnline = useOnline();  
     const {user} =  useContext(UserContext); 
+    const cartItems = useSelector( store => store.cart.items);
+    console.log(cartItems);
     return(
         <div className='bg-header'>
             <div className='container'>
@@ -41,7 +45,7 @@ const Header = () =>{
                     </li>
                     <li> 
                         <Link to="/cart">
-                            Cart
+                            Cart - {cartItems.length}
                         </Link>
                     </li>
                     <li> 

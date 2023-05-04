@@ -104,3 +104,18 @@ button{
 .menu{
     display: flex;
 }
+.menuList{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+.menuList li{
+    width: 20%;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px;
+}
+.menuList li img{
+    width: 100%;
+}

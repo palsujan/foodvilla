@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { FETCH_MENU_URL, IMG_CDN_URL } from '../config';
 import { Shimmer } from './Shimmer';
 import useRestraurant from '../utils/useRestraurant';
+import { addItem } from '../utils/cartSlice';
+import { useDispatch } from 'react-redux';
 
 const RestaurantMenu = () => {
   //How to read a dynamic URL params
@@ -28,8 +30,14 @@ const RestaurantMenu = () => {
       setMenu(menuData)
     }
 
+    const dispatch = useDispatch();
+    const addFoodItem = (menuItem) =>{
+      dispatch(addItem(menuItem));
+    }
+    
   return (!restaurant)?  <Shimmer/> : (
-    <div className='menu'>
+    <div className='container'>
+        <div className='menu'>
         <div>
         <h1>Restaurant id: {id}</h1>
         <h2>{restaurant?.name}</h2>
@@ -41,12 +49,19 @@ const RestaurantMenu = () => {
         </div>
         <div>
           <h1>Menu</h1>
-          <ul>
+          <ul className='menuList'>
             {menu?.map((menuItem, index) => {
-              return <li key={index}>{menuItem?.card?.info?.name}</li>
+              return <li key={index}>
+                <img src={`${IMG_CDN_URL}` + menuItem?.card?.info?.imageId} alt='FoodImg'/>
+                <h5>{menuItem?.card?.info?.name}</h5> 
+                <p>{menuItem?.card?.info?.description}</p> 
+                <p>category:{menuItem?.card?.info?.category}</p> 
+                <p>₹{menuItem?.card?.info?.price/100}</p> 
+                <button onClick={()=> addFoodItem(menuItem)}>Add</button></li>
             })}
           </ul>
         </div>
+    </div>
     </div>
   )
 }

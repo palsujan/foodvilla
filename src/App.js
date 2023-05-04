@@ -14,6 +14,8 @@ import Profile from "./components/Profile";
 import { Shimmer } from "./components/Shimmer";
 import RestaurantCard from "./components/RestaurantCard";
 import { UserContext } from "./utils/UserContext";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 // import Instamart from "./components/Instamart";
 
 // Chunking
@@ -33,7 +35,8 @@ const Instamart = lazy(() => import("./components/Instamart"));
             email: "sujanpal79@gmail.com"
         })
         return(
-            <UserContext.Provider value={{
+           <Provider store={store}>
+             <UserContext.Provider value={{
                 user:user,
                 setUser:setUser,
             }}>
@@ -41,6 +44,7 @@ const Instamart = lazy(() => import("./components/Instamart"));
             <Outlet/>
             <Footer/>
             </UserContext.Provider>
+           </Provider>
         );
     };
 
@@ -97,6 +101,9 @@ const Instamart = lazy(() => import("./components/Instamart"));
 
     const root = ReactDOM.createRoot(document.getElementById('root'))
     root.render(<RouterProvider router = {appRouter}/>)
+
+
+
 
 
 
