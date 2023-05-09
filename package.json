@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/palsujan/foodvilla/issues"
   },
-  "homepage": "https://github.com/palsujan/foodvilla#readme",
+  "homepage": "https://palsujan.github.io/foodvilla/",
   "devDependencies": {
     "@testing-library/react": "^14.0.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
